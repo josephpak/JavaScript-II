@@ -62,9 +62,21 @@ function contains(item, list, cb) {
 // contains({'supply': 'chalk'}, items, console.log) // false
 
 /* STRETCH PROBLEM */
+const list = ["Lebron", "Steph", "Russell", "Steph", "LeBron"]
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
+  let deduped = [];
+  array.forEach(function(element){
+    if(deduped.includes(element) === false) {
+      deduped.push(element);
+    }
+  });
+
+  cb(deduped)
+  
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+
+removeDuplicates(list, console.log)
