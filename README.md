@@ -19,7 +19,7 @@ This task focuses on getting practice with callback functions by giving you an a
 
 * [x] Write out each function using the `ES5`  `function` keyword syntax.
 
-* [ ] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
+* [x] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
 
 ## Task 3: Array Methods
 
@@ -39,7 +39,7 @@ We have learned that closures allow us to access values in scope that have alrea
 
 * [x] Review the contents of the [closure.js](assignments/closure.js) file.  
 * [x] Solve the problems listed.  Save the stretch problems until you have completed Tasks 1-4.
-* [ ] Once you have completed this task please submit a pull request against the original fork.  
+* [x] Once you have completed this task please submit a pull request against the original fork.  
 
 ## Stretch Goals
 

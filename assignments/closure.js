@@ -4,6 +4,8 @@
 function calculate (num1, num2) {
   
   return function addTwo() {
+    // closure: num1
+    // closer: num2
     return num1 + num2;
   }()
 
@@ -30,5 +32,29 @@ const counter = () => {
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
+  let count = 0;
   // `decrement` should decrement the counter variable and return it.
+  // function that takes the value below and then updates a count and returns it
+  // something that gives us either a 1 or -1 
+  return {
+    increment: () => ++count,
+    decrement: () => --count
+  }
+  
 };
+const newCounter = counterFactory();
+// console.log(counterFactory().increment());
+// console.log(counterFactory().increment());
+// console.log(counterFactory().increment());
+// console.log(counterFactory().increment());
+// console.log(counterFactory().increment());
+
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+console.log(newCounter.increment());
+
