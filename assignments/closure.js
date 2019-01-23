@@ -16,13 +16,17 @@ function calculate (num1, num2) {
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0;
-  return function() {
+  return function dummy() {
     count++
     return count;
   }
 };
-// const newCounter = counter();
-// console.log(newCounter()); // 1 
+const newCounter = counter();
+//==== counter() or newCounter -- the function dummy -- has a closure that holds a version of count which is assigned to 0
+console.log(newCounter());
+//==== when newCounter is invoked, it is essentially calling dummy again but we haven't changed where the stack is. This means that we can reach the closure that newCounter has that has the version of count that is assigned to 0 and increment it
+console.log(newCounter()); // 1 
+//==== when newCounter is invoked again, it still has access to the closure that newCounter has which points to the value 1 and we can increment it to 2
 // console.log(newCounter()); // 2
 // console.log(newCounter());
 
@@ -42,19 +46,19 @@ const counterFactory = () => {
   }
   
 };
-const newCounter = counterFactory();
-// console.log(counterFactory().increment());
-// console.log(counterFactory().increment());
-// console.log(counterFactory().increment());
-// console.log(counterFactory().increment());
-// console.log(counterFactory().increment());
+// const newCounter = counterFactory();
+// // console.log(counterFactory().increment());
+// // console.log(counterFactory().increment());
+// // console.log(counterFactory().increment());
+// // console.log(counterFactory().increment());
+// // console.log(counterFactory().increment());
 
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-console.log(newCounter.increment());
-
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.increment());
+// console.log(newCounter.decrement());
