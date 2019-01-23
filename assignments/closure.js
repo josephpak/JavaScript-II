@@ -30,6 +30,11 @@ console.log(newCounter()); // 1
 // console.log(newCounter()); // 2
 // console.log(newCounter());
 
+console.log(counter()());
+//=== in this case, counter() is dummy. dummy has access to the closure (and count) that this instance of counter() creates. When I invoke dummy, I increment count in dummy's closure to 1
+console.log(counter()()); 
+//=== the problem here is that when I call counter() again, I am creating a new closure (the previous closure that was created in the line of code above is deleted and unaccessible). The closure is saying that my count is 0 and when I invoked counter() or dummy, I see that the closure includes a count variable that points to 0. Essentially I've created another instance (an alternate world) where my closure resets
+
 /* STRETCH PROBLEM, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
